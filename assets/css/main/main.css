@@ -1,0 +1,309 @@
+body {
+    color: #222222;
+    font-family: 'source-sans-pro', sans-serif;
+}
+
+.top-bar-section ul li.active > a {
+    border-bottom: 5px solid #666;
+    margin-bottom: -5px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.top-bar-section ul li a {
+    font-weight: normal;
+    text-transform: uppercase;
+    -webkit-transition-delay: 0.5s;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease 0.5s;
+    -o-transition: all 0.1s ease 0.5s;
+    transition: all 0.1s ease 0.5s;
+}
+
+
+.top-bar .name h1 a{
+    font-weight: normal;
+    text-transform: uppercase;
+    -webkit-transition-delay: 0.5s;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease 0.5s;
+    -o-transition: all 0.1s ease 0.5s;
+    transition: all 0.1s ease 0.5s;
+}
+
+.container {
+    *zoom: 1;
+    max-width: 980px;
+    _width: 980px;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.container:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.highlight pre {
+    margin: 0;
+    padding: 1em;
+    position: relative;
+}
+
+pre {
+    font-size: 0.75rem;
+    line-height: 2;
+}
+
+.highlight {
+    border: 1px solid #DEDEDE;
+    font-size: 0.75rem;
+    line-height: 2;
+    overflow-x: auto;
+}
+
+tt, code, kbd, samp, pre {
+    font-family: 'source-code-pro', monospace;
+    font-weight: normal;
+    color: #343434;
+}
+
+p code, li code {
+    background-color: #F2F2F2;
+    border: 1px solid #E6E6E6;
+    border-radius: 3px 3px 3px 3px;
+    font-size: 0.75rem;
+    line-height: 2;
+    margin: 0 2px;
+    padding: 0 5px;
+    white-space: nowrap;
+    font-weight: normal;
+}
+
+*::-moz-selection {
+    background-color: #DADADA;
+    color: #343434;
+    text-shadow: none;
+}
+
+#wrapper {
+    min-width: 980px
+}
+
+#home {
+    margin: 0 0 90px
+}
+
+#home .hero-main {
+    position: relative;
+    width: 100%;
+    min-height: 450px
+}
+
+#home .hero-main #hero-main-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden
+}
+
+#home .hero-main .hero-main-bullets {
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+    margin: -73px 0 0;
+    padding: 0
+}
+
+#home .hero-main .hero-main-bullets li {
+    margin: 0 0 3px;
+    padding: 0;
+    list-style: none
+}
+
+#home .hero-main .hero-main-bullets li a {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px 5px 5px 5px;
+    background: none repeat scroll 0 0 #666;
+}
+
+#home .hero-main .hero-main-bullets li a.active {
+    background: none repeat scroll 0 0 #000000;
+}
+
+#home .hero-main .hero-main-bullets li a:hover {
+    background: none repeat scroll 0 0 #000000;
+}
+
+#home .hero-main .slide {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    border-bottom: 1px solid #d0d0d0;
+    background: #fff;
+    z-index: 1
+}
+
+#home .hero-main .slide .slide-content {
+    position: absolute;
+    bottom: 50%;
+    left: 110px;
+    z-index: 101;
+    max-width: 80%
+}
+
+@media screen and (min-height: 700px) {
+    #home .hero-main .slide .slide-content {
+        margin-bottom: 0 !important;
+        bottom: 80px
+    }
+}
+
+#home .hero-main .slide .slide-content h2 {
+    margin: 15px 0 20px;
+    clear: right;
+    margin-left: -60px;
+    opacity: 0;
+    position: relative;
+    -webkit-transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition-delay: 0.5s;
+    -moz-transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    -o-transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.5s
+}
+
+#home .hero-main .slide .slide-content > p {
+    margin-left: -120px;
+    opacity: 0;
+    position: relative;
+    -webkit-transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition-delay: 0.7s;
+    -moz-transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
+    -o-transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.7s;
+    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.7s
+}
+
+#home .hero-main .slide.active {
+    z-index: 10
+}
+
+#home .hero-main .slide.active .slide-content h1, #home .hero-main .slide.active .slide-content h2, #home .hero-main .slide.active .slide-content p {
+    opacity: 1;
+    margin-left: 0;
+    font-family: 'source-sans-pro', sans-serif;
+}
+
+#home .hero-main .slide.active .slide-content h1 {
+    font-family: 'volkhov', serif;
+    font-size: 4.25rem;
+    font-style: italic;
+}
+
+#home .hero-main .flip {
+    position: absolute;
+    bottom: 0;
+    right: 110px;
+    margin: 0;
+    z-index: 50
+}
+
+#home .pages > div {
+    margin-top: 100px;
+    font-family: 'source-sans-pro', sans-serif;
+    font-size: 1.25rem;
+}
+
+#home .pages h1 {
+    margin-top: 10px;
+    font-family: 'volkhov', serif;
+    font-style: italic;
+}
+
+#home .pages p {
+    padding-top: 10px;
+    margin-bottom: 5px;
+}
+
+#home .pages .more {
+    margin-top: 10px;
+}
+
+footer {
+    background: #f3f3f3;
+    border-top: 1px solid #e5e5e5;
+    padding: 70px 0 0;
+    margin: 0;
+    color: #434343
+}
+
+footer #follow-us {
+    line-height: 1;
+    margin: 0 0 30px
+}
+
+footer #like-us {
+    padding: 20px 0 45px;
+    border-top: 1px dashed #dadada
+}
+
+footer #copy {
+    background: #242424;
+    padding: 10px 0;
+    color: #fff;
+    font-size: 11px
+}
+
+footer #copy [class*="icon-"] {
+    font-size: 20px;
+}
+
+footer #copy #copyright {
+    padding: 10px 0 10px 38px;
+    line-height: 28px;
+    float: left
+}
+
+footer #copy #copyright span {
+    color: #434343
+}
+
+footer #copy #copy-right {
+    float: right;
+    padding: 10px 0;
+    line-height: 28px
+}
+
+footer #copy #copy-right a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+footer #copy #copy-right a:hover {
+    text-decoration: underline
+}
+
+footer #copy #copy-right a:hover[class*="icon-"] {
+    color: #eeeeee;
+    text-decoration: none
+}
+
+footer #copy #copy-right .separator {
+    font: 300 20px sans-serif;
+    line-height: 16px;
+    color: #4e4e4e;
+    margin: 0 3px
+}
+
+
+

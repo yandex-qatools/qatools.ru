@@ -1,0 +1,30 @@
+<script type="text/javascript" src="/assets/js/hero.js"></script>
+<!-- Check for Zepto support, load jQuery if necessary -->
+<script>
+    document.write('<script src=/assets/js/vendor/'
+            + ('__proto__' in {} ? 'zepto' : 'jquery')
+            + '.js><\/script>');
+</script>
+
+<script>
+    hljs.initHighlightingOnLoad();
+    $(document).foundation();
+    $(document).ready(function () {
+
+        $('.top-bar *[data-smoothscroll]').each(function() {
+            var menuItem = $(this);
+            var id = menuItem.attr('data-smoothscroll');
+
+            $(id).on('scrollSpy:enter', function () {
+                menuItem.addClass('active');
+            });
+
+            $(id).on('scrollSpy:exit', function () {
+                menuItem.removeClass('active');
+            });
+
+            $(id).scrollSpy();
+        });
+    });
+</script>
+
