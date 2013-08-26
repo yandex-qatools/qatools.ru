@@ -1,0 +1,22 @@
+<div class="row" id="htmlelements">
+    <div class="small-12 columns">
+        <div class="row">
+            <div class="small-12 columns"><h1>{{ include.title }}</h1></div>
+
+        </div>
+        <div class="row">
+            <div class="small-2 columns"><h1><i class="icon-github"></i></h1>
+            </div>
+            <div class="small-10 columns">
+                <h3>{{ include.description }} </h3>
+
+                {{ include.content }}
+
+            </div>
+        </div>
+        <div class="row more">
+            <div class="small-10 small-offset-2 columns"><a href="#{{ include.github }}"
+                                                            class="button secondary small expand">Show me moaarr</a></div>
+        </div>
+    </div>
+</div>
