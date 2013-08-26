@@ -10,7 +10,7 @@ description: "System property enchantment"
 
 Стабильная версия:
 
-~~~
+~~~ xml
 <dependency>
     <groupId>ru.yandex.qatools.properties</groupId>
     <artifactId>properties-loader</artifactId>
@@ -29,7 +29,7 @@ description: "System property enchantment"
 В примере будет использоваться стандартная стурктура директорий, которую декларирует maven:
 
 
-~~~
+~~~ bash
 |-pom.xml
 |-src
   |-test
@@ -44,7 +44,7 @@ description: "System property enchantment"
 
 Для начала, в ресурсах создаем файл `proxy.properties` для конфигурации прокси:
 
-~~~
+~~~ properties
 proxy.host=proxy.yandex.ru
 proxy.port=3133
 proxy.use=false
