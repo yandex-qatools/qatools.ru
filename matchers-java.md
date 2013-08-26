@@ -10,7 +10,7 @@ description: "Собрание матчеров"
 Matchers library to work with WebDriver `WebElement` interface.
 
 
-~~~
+~~~ xml
 <dependency>
     <groupId>ru.yandex.qatools.matchers</groupId>
     <artifactId>webdriver-matchers</artifactId>
@@ -36,7 +36,7 @@ Matchers library to work with collections.
 ### Matcher Decorators
 Decorators which allows handle additional condition issues (e.g. timeouts) directly in the assertion statement.
 
-~~~
+~~~ xml
 <dependency>
     <groupId>ru.yandex.qatools.matchers</groupId>
     <artifactId>matcher-decorators</artifactId>

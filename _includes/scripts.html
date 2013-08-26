@@ -1,4 +1,5 @@
-<script type="text/javascript" src="/assets/js/hero.js"></script>
+<script type="text/javascript" src="{{site.url}}/assets/js/hero.js"></script>
+<script type="text/javascript" src="{{site.url}}/assets/js/timepast.js"></script>
 <!-- Check for Zepto support, load jQuery if necessary -->
 <script>
     document.write('<script src=/assets/js/vendor/'
@@ -11,7 +12,7 @@
     $(document).foundation();
     $(document).ready(function () {
 
-        $('.top-bar *[data-smoothscroll]').each(function() {
+        $('.top-bar *[data-smoothscroll]').each(function () {
             var menuItem = $(this);
             var id = menuItem.attr('data-smoothscroll');
 
@@ -25,6 +26,12 @@
 
             $(id).scrollSpy();
         });
+
     });
 </script>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="{{site.url}}/assets/js/feeds.js">
+</script>
+
 

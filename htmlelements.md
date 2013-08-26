@@ -10,7 +10,7 @@ description: "PageObject enchantment"
 
 Maven dependencies for Html Elements core:
 
-~~~
+~~~ xml
 <dependency>
     <groupId>ru.yandex.qatools.htmlelements</groupId>
     <artifactId>htmlelements-java</artifactId>
@@ -20,7 +20,7 @@ Maven dependencies for Html Elements core:
 
 And for Html Elements matchers:
 
-~~~
+~~~ xml
 <dependency>
     <groupId>ru.yandex.qatools.htmlelements</groupId>
     <artifactId>htmlelements-matchers</artifactId>
@@ -30,7 +30,7 @@ And for Html Elements matchers:
 
 And for Thucydides integration:
 
-~~~
+~~~ xml
 <dependency>
     <groupId>ru.yandex.qatools.htmlelements</groupId>
     <artifactId>htmlelements-thucydides</artifactId>
@@ -40,7 +40,7 @@ And for Thucydides integration:
 
 Or you can include both modules at once if needed:
 
-~~~
+~~~ xml
 <dependency>
     <groupId>ru.yandex.qatools.htmlelements</groupId>
     <artifactId>htmlelements-all</artifactId>
