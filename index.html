@@ -12,7 +12,7 @@ tags: [qatools, yandex-qatools blog, testing]
         <ul class="title-area">
             <!-- Title Area -->
             <li class="name">
-                <h1><a href="{{site.url}}">QATools</a></h1>
+                <h1><a id="site-owner-link" href="{{site.url}}" data-github="{{site.owner.github}}">QATools</a></h1>
             </li>
             <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
             <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
@@ -37,7 +37,7 @@ tags: [qatools, yandex-qatools blog, testing]
                 {% for page in site.pages %}
                 {% if page.resource == true %}
                 <li class="divider"></li>
-                <li data-smoothscroll="#{{ page.github }}"><a href="#{{ page.github }}">{{ page.title }}</a></li>
+                <li data-smoothscroll="#{{page.github}}-page"><a href="#{{ page.github }}">{{ page.title }}</a></li>
                 {% endif %}
                 {% endfor %}
             </ul>
@@ -49,123 +49,88 @@ tags: [qatools, yandex-qatools blog, testing]
 <div id="home">
     <div class="hero-main">
         <div id="hero-main-container">
+            {% assign index = 0 %}
+            {% for page in site.pages %}
+            {% if page.slide == true %}
 
-
-            <div class="slide active">
+            <div class="slide {% if index == 0 %} {{ 'active' }} {% endif %}">
                 <!--http://subtlepatterns.com/tag/grid/-->
-                <img data-src=""
-                     style="background: url('/assets/img/old_mathematics.png') repeat; height: 100%; width: 100%"
-                     class="hero-main-img hero-main-replace"/>
+                <!--<img data-src=""-->
+                <!--style="background: url('/assets/img/old_mathematics.png') repeat; height: 100%; width: 100%"-->
+                <!--class="hero-main-img hero-main-replace"/>-->
 
-                <div class="slide-content">
+                <div class="slide-content row">
 
                     <div class="row">
                         <div class="small-12 columns">
                             <div class="row">
                                 <div class="small-12 columns">
-                                    <h1>HtmlElements</h1>
+                                    <h1>{{page.title}}
+                                        <small>ver. <a href="https://github.com/{{site.owner.github}}/{{page.github}}">{{page.ver}}</a>
+                                        </small>
+                                    </h1>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="small-2 columns">
-                                    <h1><i class="icon-cogs"></i></h1>
-                                </div>
-                                <div class="small-10 columns">
-                                    <h4>Getting Started</h4>
+                                <div class="small-6 columns">
+                                    <div class="small-3 columns">
+                                        <h1><i class="icon-cogs"></i></h1>
+                                    </div>
+                                    <div class="small-9 columns">
+                                        <h4>Getting Started</h4>
 
-                                    <p>Начать - проще простого. Подключение через <a href="#">мавен</a>, продуманная
-                                        структура. </p>
+                                        <p>{{page.getting-started | markdownify}} </p>
+                                    </div>
+                                </div>
+
+                                <div class="small-6 columns">
+                                    <div class="small-3 columns">
+                                        <h1><i class="icon-book"></i></h1>
+                                    </div>
+
+                                    <div class="small-9 columns">
+                                        <h4>Documentation</h4>
+
+                                        <p>{{page.documentation | markdownify}}</p>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="small-2 columns">
-                                    <h1><i class="icon-book"></i></h1>
-                                </div>
-
-                                <div class="small-10 columns">
-                                    <h4>Documentation</h4>
-
-                                    <p>Подробная документация с примерами применения. Интеграция с Thucydides</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
-                    <h2 class="subheader"><i class="icon-github"></i> Текущая версия: <a
-                            href="https://github.com/yandex-qatools/htmlelements">1.11</a>
-                        /
-                        <small><a
-                                href="https://github.com/yandex-qatools/htmlelements/tree/master/releasenotes">Changelog</a>
-                        </small>
+                    {% if page.changelog %}
+                    <h2>
+                        <small><i class="icon-github"></i> <a href="{{page.changelog}}">Changelog</a></small>
                     </h2>
+                    {% endif %}
 
+
+                    {% if page.whatsnew %}
                     <p>
-
-                    <div data-smoothscroll="#htmlelements"><a href="#htmlelements" class="button small secondary">Узнать
-                        больше</a></div>
+                        <i class="icon-sun"></i> <a href="{{page.whatsnew}}">What's new in {{page.ver}}</a>
                     </p>
+                    {% endif %}
+
                 </div>
             </div>
 
+            {% assign index = index | plus:1 %}
+            {% endif %}
+            {% endfor %}
 
-            <div class="slide">
-                <img data-src=""
-                     style="background: url('/assets/img/grid.png') repeat; height: 100%; width: 100%"
-                     class="hero-main-img hero-main-replace"/>
-
-                <div class="slide-content">
-                    <div class="row">
-                        <div class="small-12 columns">
-                            <div class="row">
-                                <div class="small-12 columns">
-                                    <h1>Properties</h1>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="small-2 columns">
-                                    <h1><i class="icon-cogs"></i></h1>
-                                </div>
-                                <div class="small-10 columns">
-                                    <h4>Getting Started</h4>
-
-                                    <p>Все еще используете <kbd>System.getProperty()</kbd>? Начните новую жизнь!</p>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="small-2 columns">
-                                    <h1><i class="icon-book"></i></h1>
-                                </div>
-
-                                <div class="small-10 columns">
-                                    <h4>Documentation</h4>
-
-                                    <p>Гайдлайн по созданию собственных конвертеров, стратегий заполнения пропертей
-                                        и
-                                        т.д.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <h2 class="subheader"><i class="icon-github"></i> Текущая версия: <a
-                            href="https://github.com/yandex-qatools/properties">1.4-SNAPSHOT</a>
-                    </h2>
-
-                    <p>
-
-                    <div data-smoothscroll="#properties"><a href="#properties" class="button small secondary">Узнать
-                        больше</a></div>
-                    </p>
-                </div>
-            </div>
 
         </div>
 
         <div class="hero-main-bullets" style="position:absolute; z-index:100; color:#FFF;">
             <ul>
-                <li><a href="#" rel="0" class="active"></a></li>
-                <li><a href="#" rel="1"></a></li>
+                {% assign index = 0 %}
+                {% for page in site.pages %}
+                {% if page.slide == true %}
+                <li><a href="#" rel="{{index}}" {% if index == 0 %} {{ 'class="active"' }} {% endif %}></a></li>
+                {% assign index = index | plus:1 %}
+                {% endif %}
+                {% endfor %}
             </ul>
         </div>
 
@@ -175,16 +140,12 @@ tags: [qatools, yandex-qatools blog, testing]
     </div>
 
 
-    <div class="pages">
-        <div class="row" id="blog">
+    <div class="pages" id="blog">
+        <div class="blog-icon"><h1><a href="http://blog.qatools.ru/"><i class="icon-pencil"></i></a></h1></div>
+
+        <div class="row">
             <div class="small-12 columns">
                 <div class="row">
-                    <div class="small-12 columns"><h1>Blog latest</h1></div>
-                </div>
-                <div class="row">
-                    <div class="small-1 columns"><h1><a href="http://blog.qatools.ru/"><i class="icon-pencil"></i></a>
-                    </h1>
-                    </div>
                     <div class="small-11 columns">
                         <div id='blog-content'></div>
                     </div>
@@ -192,32 +153,58 @@ tags: [qatools, yandex-qatools blog, testing]
 
             </div>
         </div>
+    </div>
+    <div class="pages" id="products">
+        <div class="row">
+            <div class="small-12 columns">
+                <h1 class="text-center">Cool stuff, that we made</h1>
+                <h4 class="subheader text-center">Все это используем в своих проектах мы сами, поэтому болеем всей душой
+                    за качество и функциональность</h4>
+
+                {% for page in site.pages %}
+                {% if page.slide == true %}
+
+
+                <div class="small-6 columns">
+                    <div class="small-12 columns"><h3><i class="icon-smile"></i> {{page.title}}</h3>
+                        <div class="description" id={{page.github}}></div></div>
+                    <!--<h1><i class="icon-smile icon-4x"></i></h1>&ndash;&gt;-->
+
+                </div>
+
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        </div>
 
 
         {% for page in site.pages %}
         {% if page.resource == true %}
-        <div class="row" id="{{ page.github }}">
-            <div class="small-12 columns">
-                <div class="row">
-                    <div class="small-12 columns"><h1>{{ page.title }}</h1></div>
-
-                </div>
-                <div class="row">
-                    <div class="small-2 columns"><h1><a
-                            href="http://github.com/{{ site.owner.github }}/{{ page.github }}"><i
-                            class="icon-github"></i></a></h1>
-                    </div>
-                    <div class="small-10 columns">
-                        <h3>{{ page.description }} </h3>
-
-                        {{ page.content | markdownify }}
+        <div class="pages" id="{{page.github}}-page">
+            <div class="row">
+                <div class="small-12 columns">
+                    <div class="row">
+                        <div class="small-12 columns"><h1>{{ page.title }}</h1></div>
 
                     </div>
-                </div>
-                <div class="row more">
-                    <div class="small-10 small-offset-2 columns"><a href="{{ page.url }}"
-                                                                    class="button secondary small expand">Show me
-                        moaarr</a></div>
+                    <div class="row">
+                        <div class="small-2 columns"><h1><a
+                                href="http://github.com/{{ site.owner.github }}/{{ page.github }}"><i
+                                class="icon-github"></i></a></h1>
+                        </div>
+                        <div class="small-10 columns">
+                            <h3>{{ page.description }} </h3>
+
+                            {{ page.content | markdownify }}
+
+                        </div>
+                    </div>
+                    <div class="row more">
+                        <div class="small-10 small-offset-2 columns"><a href="{{ page.url }}"
+                                                                        class="button small expand">Show me
+                            moaarr</a></div>
+                    </div>
                 </div>
             </div>
         </div>

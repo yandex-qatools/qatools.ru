@@ -13,14 +13,17 @@ function initialize() {
             var feeds = result.feed.entries;
 
             $.each(feeds.slice(0, postlimit), function (i, item) {
-                console.log(item);
                 var match = item.content.match(/<p>(.*)/)[1];
                 container
-                    .append($('<h4/>')
-                        .html('<a href=' + item.link + '>' + item.title + '</a> <small>' + timeDifference(new Date(), new Date(item.publishedDate)) + timerOptions.end + '</small>')
+                    .append($('<div  class="small-6 columns"/>')
+                    .append($('<h6/>')
+                        .html(item.title + ' <small>' + timeDifference(new Date(), new Date(item.publishedDate)) + timerOptions.end + '</small>')
                     )
                     .append($('<div/>')
                         .html((match.length > contentLimit ? match.substr(0, contentLimit) : match) + '... <br/><br/>')
+                    )
+                        .append($('<a/>').attr('href', item.link).text('Read moarr'))
+
                     );
 
             });
