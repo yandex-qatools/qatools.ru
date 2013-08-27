@@ -237,17 +237,18 @@ p code, li code {
 }
 
 
-#home .pages:nth-of-type(3n+1) {
-    background: #ECECEC;
-}
-
-#home .pages:nth-of-type(3n+2) {
-    background: #EDF3F7;
-}
-
 #home .pages:nth-of-type(3n) {
     background: #fff;
 }
+
+#home .pages:nth-of-type(3n+2) {
+    background: #ECECEC;
+}
+
+#home .pages:nth-of-type(3n+1) {
+    background: #EDF3F7;
+}
+
 
 #home .pages h1 {
     color: #343434;

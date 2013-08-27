@@ -5,7 +5,7 @@ slide: true
 github: properties
 getting-started: "Все еще используете `System.getProperty()`? Начните новую жизнь!"
 documentation: "Гайдлайн по созданию собственных конвертеров, стратегий заполнения пропертей и т.д."
-ver: "1.4-SNAPSHOT"
+ver: "1.4"
 #changelog: https://github.com/yandex-qatools/htmlelements/tree/master/releasenotes
 site: https://github.com/yandex-qatools/properties
 ---
