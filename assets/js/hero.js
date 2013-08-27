@@ -10,7 +10,7 @@ $(document).ready(function () {
         currentSlide = 0,
         timerSlide = null,
         delayTime = 6000,
-        defaultHeight = 850,
+        defaultHeight = 450,
         transitionTime = 600;
 
     /** FULLSCREEN **/

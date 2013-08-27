@@ -151,15 +151,17 @@ p code, li code {
     overflow: hidden;
     border-bottom: 1px solid #d0d0d0;
     background: #fff;
-    z-index: 1
+    z-index: 1;
 }
 
 #home .hero-main .slide .slide-content {
-    position: absolute;
-    bottom: 50%;
-    left: 110px;
+    bottom: 30%;
     z-index: 101;
-    max-width: 80%
+}
+
+
+#home .hero-main .slide .row {
+    margin-top: 0;
 }
 
 @media screen and (min-height: 700px) {
@@ -218,24 +220,73 @@ p code, li code {
 }
 
 #home .pages > div {
-    margin-top: 100px;
     font-family: 'source-sans-pro', sans-serif;
     font-size: 1.25rem;
 }
 
+#home .pages {
+    position: relative;
+    border-bottom: 1px solid #d0d0d0;
+    padding-bottom: 50px;
+}
+
+
+#home .pages > .row {
+    margin-top: 0;
+    padding-top: 10px;
+}
+
+
+#home .pages:nth-of-type(3n+1) {
+    background: #ECECEC;
+}
+
+#home .pages:nth-of-type(3n+2) {
+    background: #EDF3F7;
+}
+
+#home .pages:nth-of-type(3n) {
+    background: #fff;
+}
+
 #home .pages h1 {
+    color: #343434;
     margin-top: 10px;
     font-family: 'volkhov', serif;
     font-style: italic;
 }
 
 #home .pages p {
+    color: #5E5E5E;
     padding-top: 10px;
     margin-bottom: 5px;
 }
 
 #home .pages .more {
     margin-top: 10px;
+}
+
+#blog {
+    min-height: 150px;
+    padding-left: 150px;
+}
+
+#blog .blog-icon {
+    position: absolute;
+    top: 0;
+    left: 80px;
+    height: 100px;
+    background: #fff;
+    padding: 10px;
+    margin: 0;
+    z-index: 50;
+    border-bottom: 1px solid #d0d0d0;
+    border-right: 1px solid #d0d0d0;
+    border-left: 1px solid #d0d0d0;
+}
+
+#blog .blog-icon a {
+    color: #343434;
 }
 
 footer {
