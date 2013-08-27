@@ -35,6 +35,10 @@ links:
     url: http://blog.qatools.ru
     external: true
 
+  - title: CI
+    url: http://ci.qatools.ru
+    external: true
+
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Europe/Moscow
 future:      false
