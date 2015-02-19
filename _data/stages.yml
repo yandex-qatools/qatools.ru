@@ -1,0 +1,30 @@
+- title: Develop
+  icon: fa-wrench
+  description: Libraries and tools for easier making tests
+  tools:
+    - title: Html-elements
+      url: https://github.com/yandex-qatools/htmlelements
+      logoUrl: /assets/img/html-elements.svg
+      description: Html Elements is a Java framework providing easy-to-use way of interaction with web-page elements in web-page tests
+    - title: Properties
+      description: Java library to populate beans with system enviroment properties in a simple convinient way
+    - title: Matchers-java
+      description: Additional hamcrest matchers for collections and webdriver webelements. Includes a few matcher decorators to handle timeout issues
+- title: Run
+  icon: fa-rocket
+  description: We take care of your test runs. Cloud, executions in parallel and so on
+  tools:
+    - title: noname
+      description: secret tool
+- title: Report
+  icon: fa-file-text-o
+  description: Get better report about automated tests. Now you can understand what is going there
+  tools:
+    - title: Allure
+      url: http://allure.qatools.ru
+      logoUrl: /assets/img/allure.svg
+      description: Nice html-report for any testing approach
+    - title: AShot
+      url: https://github.com/yandex-qatools/ashot
+      logoUrl: /assets/img/ashot.svg
+      description: WebDriver Screenshot utility. Take screenshots, crop, prettify, compare
