@@ -28,13 +28,13 @@
 
 <script src="http://yandex.st/jquery/2.1.3/jquery.min.js"></script>
 
-<script src="{{ site.url }}/vendor/foundation/js/foundation.min.js"></script>
+<script src="{{ site.baseurl }}/vendor/foundation/js/foundation.min.js"></script>
 <script>
     $(document).foundation();
 </script>
 
 {% for script in page.scripts %}
-    <script src="{{ site.url }}/{{script}}"></script>
+    <script src="{{ site.baseurl }}/{{script}}"></script>
 {% endfor %}
 
 

@@ -72,7 +72,7 @@ tags: [qatools, yandex-qatools blog, testing]
                     <div class="row tool">
                         <div class="small-3 columns {% cycle 'left', 'right' %} {% cycle 'text-left', 'text-right' %}">
                             <a href="{{tool.url}}">
-                                <img class="tool_image" src="{% if tool.logoUrl %}{{tool.logoUrl}}{% else %}http://placeimg.com/200/200/tech?{{forloop.index}}{% endif %}">
+                                <img class="tool_image" src="{% if tool.logoUrl %}{{site.baseurl}}/{{tool.logoUrl}}{% else %}http://placeimg.com/200/200/tech?{{forloop.index}}{% endif %}">
                             </a>
                         </div>
                         <div class="small-9 columns">
