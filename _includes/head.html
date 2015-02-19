@@ -1,83 +1,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
+<meta name="description" content="{{page.description}}">
+<meta name="keywords" content="{{page.tags | join: ', '}}">
+
 <title>{{page.title}}</title>
 
-<link rel="stylesheet" href="{{ site.url }}/assets/css/foundation.css">
-<link rel="stylesheet" href="{{ site.url }}/assets/css/main/main.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
 
-<!--http://fontawesome.veliovgroup.com/-->
-<link rel="stylesheet" href="{{ site.url }}/assets/css/font-awesome.css">
-<link rel="stylesheet" href="{{ site.url }}/assets/css/pigm-github.css">
-<link rel="stylesheet" href="{{ site.url }}/assets/css/hljs-github.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/pigm-github.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/hljs-github.css">
 
-
-
-<script src="http://yandex.st/jquery/2.0.3/jquery.min.js"></script>
-<script src="http://yandex.st/jquery/easing/1.3/jquery.easing.min.js"></script>
-<script src="http://yandex.st/modernizr/2.6.2/modernizr.min.js"></script>
-<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
-
-<!--https://github.com/thesmart/jquery-scrollspy-->
-<script src="{{ site.url }}/assets/js/jquery/scrollspy.js"></script>
-
-<!--http://foundation.zurb.com/docs/-->
-<script src="{{ site.url }}/assets/js/foundation.min.js"></script>
-
-<script type="text/javascript" src="{{ site.url }}/assets/js/scripts.js"></script>
-
-<!--https://github.com/michael/github-->
-<script type="text/javascript" src="{{ site.url }}/assets/js/base64.js"></script>
-<script type="text/javascript" src="{{ site.url }}/assets/js/underscore-min.js"></script>
-<script type="text/javascript" src="{{ site.url }}/assets/js/github-api.js"></script>
-
-<!-- Webfonts -->
-<script src="//use.edgefonts.net/source-sans-pro:n2,i2,n3,i3,n4,i4,n6,i6,n7,i7,n9,i9;source-code-pro:n4,n7;volkhov.js"></script>
-
-
+<link href='http://fonts.googleapis.com/css?family=Roboto&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
 
 
 <!-- Icons -->
 <!-- 16x16 -->
-<link rel="shortcut icon" href="{{ site.url }}/favicon.ico">
+<link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico">
 <!-- 32x32 -->
-<link rel="shortcut icon" href="{{ site.url }}/favicon.png">
+<link rel="shortcut icon" href="{{ site.baseurl }}/favicon.png">
 <!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
-<link rel="apple-touch-icon-precomposed" href="{{ site.url }}/images/site-logo.png">
+<link rel="apple-touch-icon-precomposed" href="{{ site.baseurl }}/assets/img/logo.png">
 <!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.url }}/images/site-logo.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site.baseurl }}/assets/img/logo.png">
 <!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.url }}/images/site-logo.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ site.baseurl }}/assets/img/logo.png">
 <!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.url }}/images/site-logo.png">
-
-
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-            try {
-                w.yaCounter22048033 = new Ya.Metrika({id:22048033,
-                    webvisor:true,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true});
-            } catch(e) { }
-        });
-
-        var n = d.getElementsByTagName("script")[0],
-                s = d.createElement("script"),
-                f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-
-        if (w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
-    })(document, window, "yandex_metrika_callbacks");
-</script>
-<noscript><div><img src="//mc.yandex.ru/watch/22048033" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-
-
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}/assets/img/logo.png">

@@ -7,217 +7,87 @@ tags: [qatools, yandex-qatools blog, testing]
 
 
 <div id="wrapper">
-<div class="fixed">
-    <nav class="top-bar">
-        <ul class="title-area">
-            <!-- Title Area -->
-            <li class="name">
-                <h1><a id="site-owner-link" href="{{site.url}}" data-github="{{site.owner.github}}">QATools</a></h1>
-            </li>
-            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-            <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+<nav class="top-bar" data-topbar role="navigation">
+
+    <section class="top-bar-section">
+        <ul class="right">
+            <li><a href="http://blog.qatools.ru">Blog</a></li>
+            <li><a href="http://teamcity.qatools.ru">Teamcity</a></li>
+            <li><a href="http://github.com/{{ site.owner.github }}">
+                <i class="fa fa-github"></i>
+                Github
+            </a></li>
+            <li><a href="http://twitter.com/{{ site.owner.twitter }}">
+                <i class="fa fa-twitter"></i>
+                Twitter
+            </a></li>
         </ul>
-
-        <section class="top-bar-section">
-            <!-- Left Nav Section -->
-            <ul class="left">
-                {% for link in site.links %}
-                {% if link.external %}
-                <li class="divider"></li>
-                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-                {% else %}
-                <li><a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a></li>
-                {% endif %}
-                {% endfor %}
-                <li class="divider"></li>
-            </ul>
-
-            <!-- Right Nav Section -->
-            <ul class="right">
-                {% for page in site.pages %}
-                {% if page.resource == true %}
-                <li class="divider"></li>
-                <li data-smoothscroll="#{{page.github}}-page"><a href="#{{ page.github }}">{{ page.title }}</a></li>
-                {% endif %}
-                {% endfor %}
-            </ul>
-        </section>
-    </nav>
+    </section>
+</nav>
+<div class="hero">
+    <div class="hero_content row">
+        <div class="hero_logo small-3 columns"></div>
+        <div class="small-9 columns">
+            <h1 class="hero_title">Yandex QATools</h1>
+            <p class="hero_text">Full stack for automation testing. Our tools can help you on all stages of your process</p>
+        </div>
+    </div>
 </div>
 
-
-<div id="home">
-    <div class="hero-main">
-        <div id="hero-main-container">
-            {% assign index = 0 %}
-            {% for page in site.pages %}
-            {% if page.slide == true %}
-
-            <div class="slide {% if index == 0 %} {{ 'active' }} {% endif %}">
-                <!--http://subtlepatterns.com/tag/grid/-->
-                <!--<img data-src=""-->
-                <!--style="background: url('/assets/img/old_mathematics.png') repeat; height: 100%; width: 100%"-->
-                <!--class="hero-main-img hero-main-replace"/>-->
-
-                <div class="slide-content row">
-
-                    <div class="row">
-                        <div class="small-12 columns">
-                            <div class="row">
-                                <div class="small-12 columns">
-                                    <h1>{{page.title}}
-                                        <small>ver. <a href="https://github.com/{{site.owner.github}}/{{page.github}}">{{page.ver}}</a>
-                                        </small>
-                                    </h1>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="small-6 columns">
-                                    <div class="small-3 columns">
-                                        <h1><i class="icon-cogs"></i></h1>
-                                    </div>
-                                    <div class="small-9 columns">
-                                        <h4>Getting Started</h4>
-
-                                        {{page.getting-started | markdownify}}
-                                    </div>
-                                </div>
-
-                                <div class="small-6 columns">
-                                    <div class="small-3 columns">
-                                        <h1><i class="icon-book"></i></h1>
-                                    </div>
-
-                                    <div class="small-9 columns">
-                                        <h4>Documentation</h4>
-
-                                        <p>{{page.documentation | markdownify}}</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    {% if page.changelog %}
-                    <h2>
-                        <small><i class="icon-github"></i> <a href="{{page.changelog}}">Changelog</a></small>
-                    </h2>
-                    {% endif %}
-
-
-                    {% if page.whatsnew %}
-                    <p>
-                        <i class="icon-sun"></i> <a href="{{page.whatsnew}}">What's new in {{page.ver}}</a>
-                    </p>
-                    {% endif %}
-
+<div class="teasers">
+    <div class="row">
+        {% for stage in site.data.stages %}
+        <div class="small-4 columns teaser">
+            <p class="text-center teaser_icon"><i class="fa fa-5x {{stage.icon}}"></i></p>
+        </div>
+        {% endfor %}
+    </div>
+    <div data-magellan-expedition="fixed" class="magellan">
+        <div class="row">
+            {% for stage in site.data.stages %}
+                <div class="small-4 columns magellan_item" data-magellan-arrival="{{stage.title}}">
+                    <h3 class="text-center">
+                        <a href="#{{stage.title}}" class="magellan_link">{{stage.title}}</a>
+                    </h3>
                 </div>
-            </div>
-
-            {% assign index = index | plus:1 %}
-            {% endif %}
             {% endfor %}
-
-
-        </div>
-
-        <div class="hero-main-bullets" style="position:absolute; z-index:100; color:#FFF;">
-            <ul>
-                {% assign index = 0 %}
-                {% for page in site.pages %}
-                {% if page.slide == true %}
-                <li><a href="#" rel="{{index}}" {% if index == 0 %} {{ 'class="active"' }} {% endif %}></a></li>
-                {% assign index = index | plus:1 %}
-                {% endif %}
-                {% endfor %}
-            </ul>
-        </div>
-
-        <div data-smoothscroll="#blog">
-            <a href="#blog" class="button flip small secondary">Подробнее</a>
         </div>
     </div>
-
-
-    <div class="pages" id="blog">
-        <div class="blog-icon"><h1><a href="http://blog.qatools.ru/"><i class="icon-pencil"></i></a></h1></div>
-
-        <div class="row">
-            <div class="small-12 columns">
-                <div class="row">
-                    <div class="small-11 columns">
-                        <div id='blog-content'></div>
-                    </div>
-                </div>
-
-            </div>
+    <div class="row">
+        {% for stage in site.data.stages %}
+        <div class="small-4 columns teaser">
+            <p>{{stage.description}}</p>
         </div>
-    </div>
-    <div class="pages" id="products">
-        <div class="row">
-            <div class="small-12 columns">
-                <h1 class="text-center">Cool stuff, that we made</h1>
-                <h4 class="subheader text-center">Все это используем в своих проектах мы сами, поэтому болеем всей душой
-                    за качество и функциональность</h4>
-
-                {% for page in site.pages %}
-                {% if page.slide == true %}
-
-
-                <div class="small-6 columns">
-                    <div class="small-12 columns"><h3><i class="icon-smile"></i> {{page.title}}</h3>
-                        <div class="description" id={{page.github}}></div></div>
-                    <!--<h1><i class="icon-smile icon-4x"></i></h1>&ndash;&gt;-->
-
-                </div>
-
-                {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-        </div>
-
-
-        {% for page in site.pages %}
-        {% if page.resource == true %}
-        <div class="pages" id="{{page.github}}-page">
-            <div class="row">
-                <div class="small-12 columns">
-                    <div class="row">
-                        <div class="small-12 columns"><h1>{{ page.title }}</h1></div>
-
-                    </div>
-                    <div class="row">
-                        <div class="small-2 columns"><h1><a
-                                href="http://github.com/{{ site.owner.github }}/{{ page.github }}"><i
-                                class="icon-github"></i></a></h1>
-                        </div>
-                        <div class="small-10 columns">
-                            <h3>{{ page.description }} </h3>
-
-                            {{ page.content | markdownify }}
-
-                        </div>
-                    </div>
-                    <div class="row more">
-                        <div class="small-10 small-offset-2 columns"><a href="{{ page.url }}"
-                                                                        class="button small expand">Show me
-                            moaarr</a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        {% endif %}
         {% endfor %}
     </div>
 </div>
-</div>
+{% for stage in site.data.stages %}
+    <div class="stage">
+        <div class="row">
+            <div class="small-12 columns">
+                <h2 id="{{stage.title}}" data-magellan-destination="{{stage.title}}">
+                    {{stage.title}}
+                </h2>
+                {% for tool in stage.tools %}
+                    <div class="row tool">
+                        <div class="small-3 columns {% cycle 'left', 'right' %} {% cycle 'text-left', 'text-right' %}">
+                            <a href="{{tool.url}}">
+                                <img class="tool_image" src="{% if tool.logoUrl %}{{site.baseurl}}/{{tool.logoUrl}}{% else %}http://placeimg.com/200/200/tech?{{forloop.index}}{% endif %}">
+                            </a>
+                        </div>
+                        <div class="small-9 columns">
+                            <h3 class="tool_title"><a href="{{tool.url}}">{{tool.title}}</a></h3>
+                            <p>{{tool.description}}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endfor %}
 
 
 </div>
-
 
 
 

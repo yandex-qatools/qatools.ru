@@ -1,29 +1,34 @@
-<footer>
-    <!--<div class="container">
-        <p id="follow-us">Follow <strong>US</strong> следите за новостями! </p>
-
-        <div id="like-us">
-            <div id="fb-root" class=" fb_reset">
-                Like it!
-            </div>
-
-
-            <div data-show-faces="true" data-width="980"
-                 class="fb-like fb_edge_widget_with_comment fb_iframe_widget"><span
-                    style="height: 24px; width: 900px;"></span></div>
+<footer class="footer row">
+    {% if site.owner.github %}
+        <div class="small-4 columns text-center">
+            <a href="http://github.com/{{ site.owner.github }}">
+                <i class="fa fa-github"></i>
+                Github
+            </a>
         </div>
-    </div>-->
+    {% endif %}
+    {% if site.owner.twitter %}
+        <div class="small-4 columns text-center">
+            <a href="http://twitter.com/{{ site.owner.twitter }}">
+                <i class="fa fa-twitter"></i>
+                Twitter
+            </a>
+        </div>
+    {% endif %}
+    <div class="small-4 columns text-center">
+        &copy; 2013 QATools-Team <br/>
+        <i>All rights reserved.</i>
+    </div>
 
     <div id="copy">
         <div class="container">
             <div id="copy-right">
 
-                {% if site.owner.twitter %}<a href="http://twitter.com/{{ site.owner.twitter }}" title="{{ site.owner.name}} on Twitter" target="_blank"  class="icon-twitter-sign" ></a>{% endif %}
-                {% if site.owner.github %}<a href="http://github.com/{{ site.owner.github }}" title="{{ site.owner.name}} on Github" target="_blank"  class="icon-github-sign"></a>{% endif %}
+                <a  title="{{ site.owner.name}} on Twitter" target="_blank"  class="icon-twitter-sign" ></a>
+
 
             </div>
-            <div id="copyright">&copy; 2013 QATools-Team <span
-                    id="rights"> All rights reserved.</span></div>
+
 
             <div class="clear"></div>
         </div>

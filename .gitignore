@@ -1,4 +1,8 @@
 .idea
 _site
 *.iml
+
+bower_components
+_site
+.sass-cache
 .DS_Store

@@ -1,38 +1,41 @@
-<script type="text/javascript" src="{{site.url}}/assets/js/hero.js"></script>
-<script type="text/javascript" src="{{site.url}}/assets/js/timepast.js"></script>
-<!-- Check for Zepto support, load jQuery if necessary -->
-<script>
-    document.write('<script src=/assets/js/vendor/'
-            + ('__proto__' in {} ? 'zepto' : 'jquery')
-            + '.js><\/script>');
-</script>
-
-<script>
-    hljs.initHighlightingOnLoad();
-    $(document).foundation();
-    $(document).ready(function () {
-
-        $('.top-bar *[data-smoothscroll]').each(function () {
-            var menuItem = $(this);
-            var id = menuItem.attr('data-smoothscroll');
-
-            $(id).on('scrollSpy:enter', function () {
-                menuItem.addClass('active');
-            });
-
-            $(id).on('scrollSpy:exit', function () {
-                menuItem.removeClass('active');
-            });
-
-            $(id).scrollSpy();
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter22048033 = new Ya.Metrika({id:22048033,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+            } catch(e) { }
         });
 
-    });
+        var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/22048033" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script src="http://yandex.st/jquery/2.1.3/jquery.min.js"></script>
+
+<script src="{{ site.baseurl }}/vendor/foundation/js/foundation.min.js"></script>
+<script>
+    $(document).foundation();
 </script>
 
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript" src="{{site.url}}/assets/js/feeds.js"> </script>
-<script type="text/javascript" src="{{site.url}}/assets/js/github.js"> </script>
+{% for script in page.scripts %}
+    <script src="{{ site.baseurl }}/{{script}}"></script>
+{% endfor %}
 
 
 
